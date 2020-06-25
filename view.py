@@ -6,6 +6,10 @@ import curses
 from curses import wrapper
 from curses.textpad import Textbox, rectangle
 
+#import sys #this was in the termcolor pypi page, not sure if it's needed.
+import termcolor
+from termcolor import colored, cprint
+
 import logging
 import threading
 import time
@@ -107,7 +111,7 @@ parser = PostParser()
 
 listener = MyStreamListener()
 
-EDITOR = ("$EDITOR", "/bin/nano", "notepad")
+EDITOR = ("$EDITOR", "/bin/vi" "/bin/nano", "notepad") #added vi to editor. I think this will give it priority over nano?
 TMPFILE = ".tmp.txt"
 PICTUREFOLDER = "/home/user/Pictures/"
 CREDENTIALS = "credentials.txt"
