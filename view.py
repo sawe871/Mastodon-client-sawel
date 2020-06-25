@@ -39,7 +39,11 @@ except:
 import ast # to convert a string into a list
 from os import mkdir
 import os
-
+#Sawel's editor choice
+print("Do you want to use 'nano' or 'vim' as an editor?")
+EditChoice = input()
+print(EditChoice)
+##
 screenAccess = threading.Semaphore(1)
 logAccess = threading.Semaphore(1)
 downloadAccess = threading.Semaphore(1)
