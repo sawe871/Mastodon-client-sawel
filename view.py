@@ -111,7 +111,7 @@ parser = PostParser()
 
 listener = MyStreamListener()
 
-EDITOR = ("$EDITOR", "/bin/vi" "/bin/nano", "notepad") #added vi to editor. I think this will give it priority over nano?
+EDITOR = ("$EDITOR", "/bin/vim", "/bin/nano", "notepad") #added vi to editor. I think this will give it priority over nano?
 TMPFILE = ".tmp.txt"
 PICTUREFOLDER = "/home/user/Pictures/"
 CREDENTIALS = "credentials.txt"
