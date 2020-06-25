@@ -1,4 +1,4 @@
-Add option to use VIM
-add ability to cancel text post with VIM
+Add option to use VIM DONE
+add ability to cancel text post with VIM DONE
 Add color output support
-Add w3m/cacaview/catimg support
+add color output for whatever is being used for image rendering.

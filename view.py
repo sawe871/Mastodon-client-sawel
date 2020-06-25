@@ -41,8 +41,8 @@ from os import mkdir
 import os
 #Sawel's editor choice
 print("Do you want to use 'nano' or 'vim' as an editor?")
-EditChoice = input()
-print(EditChoice)
+EditorChoice = input()
+#print(EditorChoice)
 ##
 screenAccess = threading.Semaphore(1)
 logAccess = threading.Semaphore(1)
@@ -114,10 +114,13 @@ class PostParser(HTMLParser):
 parser = PostParser()
 
 listener = MyStreamListener()
-
-EDITOR = ("$EDITOR", "/bin/vim", "/bin/nano", "notepad") #added vi to editor. I think this will give it priority over nano?
+if EditorChoice == "vim" :
+    EDITOR = ("$EDITOR", "/usr/bin/vim", "notepad")
+if EditorChoice == "nano" :
+    EDITOR = ("$EDITOR", "/usr/bin/vim", "notepad") #I really should make this into an elif statement
+#EDITOR = ("$EDITOR", "/bin/vim", "/bin/nano", "notepad") #added vi to editor. I think this will give it priority over nano?
 TMPFILE = ".tmp.txt"
-PICTUREFOLDER = "/home/user/Pictures/"
+PICTUREFOLDER = ""#/home/user/Pictures/" #causing issues for me. I'd be stuck on the picture folder line and be unable to send anything.
 CREDENTIALS = "credentials.txt"
 
 MINX = 62
