@@ -6,6 +6,10 @@ import curses
 from curses import wrapper
 from curses.textpad import Textbox, rectangle
 
+#import sys #this was in the termcolor pypi page, not sure if it's needed.
+import termcolor
+from termcolor import colored, cprint
+
 import logging
 import threading
 import time
@@ -35,7 +39,11 @@ except:
 import ast # to convert a string into a list
 from os import mkdir
 import os
-
+#Sawel's editor choice
+print("Do you want to use 'nano' or 'vim' as an editor?")
+EditorChoice = input()
+#print(EditorChoice)
+##
 screenAccess = threading.Semaphore(1)
 logAccess = threading.Semaphore(1)
 downloadAccess = threading.Semaphore(1)
@@ -106,10 +114,13 @@ class PostParser(HTMLParser):
 parser = PostParser()
 
 listener = MyStreamListener()
-
-EDITOR = ("$EDITOR", "/bin/nano", "notepad")
+if EditorChoice == "vim" :
+    EDITOR = ("$EDITOR", "/usr/bin/vim", "notepad")
+if EditorChoice == "nano" :
+    EDITOR = ("$EDITOR", "/usr/bin/vim", "notepad") #I really should make this into an elif statement
+#EDITOR = ("$EDITOR", "/bin/vim", "/bin/nano", "notepad") #added vi to editor. I think this will give it priority over nano?
 TMPFILE = ".tmp.txt"
-PICTUREFOLDER = "/home/user/Pictures/"
+PICTUREFOLDER = ""#/home/user/Pictures/" #causing issues for me. I'd be stuck on the picture folder line and be unable to send anything.
 CREDENTIALS = "credentials.txt"
 
 MINX = 62

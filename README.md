@@ -19,6 +19,7 @@ I only tested it on linux, not sure if it works on other OS
 * urllib
 * PIL
 * aalib (http://jwilk.net/software/python-aalib)
+* nano or vim
 
 Most of them are by default in python3. I tried on a fresh ubuntu and I only needed to install Mastodon.py.
 If it says an error for another one, please tell me (to fix it you just need to install it with pip3).
