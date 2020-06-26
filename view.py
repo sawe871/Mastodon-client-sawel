@@ -39,10 +39,12 @@ except:
 import ast # to convert a string into a list
 from os import mkdir
 import os
-#Sawel's editor choice
-print("Do you want to use 'nano' or 'vim' as an editor?")
-EditorChoice = input()
-#print(EditorChoice)
+#Set editor if $EDITOR does not exist
+if '$EDITOR' == "" :
+    print("Do you want to use 'nano' or 'vim' as an editor?")
+    EditorChoice = input()
+else :
+    EditorChoice = "EDITOR"
 ##
 screenAccess = threading.Semaphore(1)
 logAccess = threading.Semaphore(1)
@@ -116,9 +118,10 @@ parser = PostParser()
 listener = MyStreamListener()
 if EditorChoice == "vim" :
     EDITOR = ("$EDITOR", "/usr/bin/vim", "notepad")
-if EditorChoice == "nano" :
+elif EditorChoice == "nano" :
     EDITOR = ("$EDITOR", "/usr/bin/vim", "notepad") #I really should make this into an elif statement
-#EDITOR = ("$EDITOR", "/bin/vim", "/bin/nano", "notepad") #added vi to editor. I think this will give it priority over nano?
+else :
+    EDITOR = ("$EDITOR", "/bin/vim", "/bin/nano", "notepad") #added vi to editor. I think this will give it priority over nano?
 TMPFILE = ".tmp.txt"
 PICTUREFOLDER = ""#/home/user/Pictures/" #causing issues for me. I'd be stuck on the picture folder line and be unable to send anything.
 CREDENTIALS = "credentials.txt"
@@ -1233,7 +1236,7 @@ def newPost(mastodon, t, paddic, windic, errorwin, s):
 				mediadics.append(mastodon.media_post(media_file=media[0]+m, description=desc[0]+d))
 				error(errorwin, 'media', media[0]+m + ' was successfuly appended')
 			except:
-				#error(errorwin, 'media', media[0]+m + ' does not exist')
+				error(errorwin, 'media', media[0]+m + ' does not exist')
 				errors = True
 			
 
