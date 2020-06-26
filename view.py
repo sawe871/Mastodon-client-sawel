@@ -107,7 +107,7 @@ parser = PostParser()
 listener = MyStreamListener()
 EDITOR = ("$EDITOR", "/bin/nano", "notepad")
 TMPFILE = ".tmp.txt"
-PICTUREFOLDER = "/home/user/Pictures/"
+PICTUREFOLDER = ""
 CREDENTIALS = "credentials.txt"
 
 MINX = 62
