@@ -1,5 +1,1 @@
-ADD A "LOAD MORE" BUTTON LIKE HUSKY/TUSKY HAS
-Add color output support
-add color output for whatever is being used for image rendering if possible
-add confirmation dialoge for quitting
-make EditorChoice fill in '/usr/bin/<EditorChoice>; add an exception for windows.
+
