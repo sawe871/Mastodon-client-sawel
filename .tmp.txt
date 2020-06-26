@@ -1,0 +1,1 @@
+So, for some reason when apcman installed tmux it did not create _any_ configuration files.
