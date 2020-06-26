@@ -1218,9 +1218,9 @@ def newPost(mastodon, t, paddic, windic, errorwin, s):
 				f = open(media[0]+m, "r")
 				f.close()
 				mediadics.append(mastodon.media_post(media_file=media[0]+m, description=desc[0]+d))
-				#error(errorwin, 'media', media[0]+m + ' was successfuly appended')
+				error(errorwin, 'media', media[0]+m + ' was successfuly appended')
 			except:
-				error(errorwin, 'media', media[0]+m + ' does not exist')
+				#error(errorwin, 'media', media[0]+m + ' does not exist')
 				errors = True
 			
 
